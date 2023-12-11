@@ -4,3 +4,68 @@
     box-sizing: border-box;
 }
 
+:root {
+    --white: white;
+}
+
+body {
+    background-color: white;
+}
+
+header {
+    display: flex;
+    flex-wrap: row;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    justify-content: space-between;
+    line-height: 1.5;
+}
+
+h1 {
+    position: relative;
+    color: var(--white);
+
+}
+
+nav a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+}
+
+.projects {
+    display: flex;
+    width: 50%;
+    
+}
+
+.projects .first-project {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+
+    
+    .projects {
+      width: 50%;
+    }
+  }
+  
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .projects{
+      width: 100%;
+    }
+  }

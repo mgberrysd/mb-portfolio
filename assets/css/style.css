@@ -96,7 +96,6 @@ main section {
 h3 {
     position: relative;
     border-style: solid;
-    border-width: 1%;
     border-radius: 25px;
     background-color: aqua;
     text-align: center;
@@ -145,14 +144,6 @@ footer p {
     text-align: center;
 }
 
-/* @media screen and (max-width: 992px) {
-
-    
-    .projects {
-      width: 50%;
-    }
-  } */
-  
   /* scaling for small screens */
 @media screen and (max-width: 992px) {
     header, article, main, footer {

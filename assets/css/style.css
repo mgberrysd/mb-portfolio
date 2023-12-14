@@ -4,20 +4,20 @@
     box-sizing: border-box;
 }
 
+/* this sets the scroll behavior when one of the links is clicked, makes a scroll animation */
 html {  
     scroll-behavior: smooth;
 }
 
-:root {
-    --white: white;
-}
-
+/* Set the  */
 body {
     background-color: white;
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* header styling results in sticky header that follows the user down the page */
+/* Set up as a flex box to allow for a dynamic change from row to column on smaller screens */
 header {
     display: flex;
     flex-wrap: row;
@@ -29,48 +29,53 @@ header {
     align-items: center;
     z-index: 2;
     padding: 0 1%;
-    /* transition: flex-basis 500ms linear; */
-
-}
-
-h1 {
     color: white;
-
 }
 
+/* some styling on my headshot, not too big and border radius results in a circle */
+/* might be better in the about me */
 header img {
     width: 5%;
     border-radius: 75%;
 }
 
+/* sets the text color on the links, doesn't seem to apply at higher levels */
 nav a {
     color: white;
 }
-
-h2 {
-    font-size: 30px;
-    width: 10%;
-    text-decoration: underline;
+/* a reused margin around the body elements */
+article, main, footer {
+    margin: 1%;
+    padding-top: 2%;
 }
 
+/* some repeated styling on the h2 tags which call out the main sections */
+h2 {
+    flex: 0 0 10%;
+    min-width: 200px;
+    width: 10%;
+    text-decoration: underline;
+    margin-right: 1%;
+}
+
+/* made the first body element into a flex box so the direction can change later */
 article {
-    padding-top: 50px;
     display: flex;
-    margin: 20px;
 }
 
 article p {
     background-color: aqua;
     width: 100%;
+    padding: 1%;
 }
 
+/* flexbox on the main element where the projects are displayed */
 main {
-    padding-top: 50px;
     display: flex;
-    margin: 20px;
     width: 96%;
 }
 
+/* flexbox and scaling on the projects themselves */
 main div {
     display: flex;
     flex-wrap: wrap;
@@ -78,51 +83,56 @@ main div {
     /* width: 80%; */
 }
 
+/* padding on the product cards to give them some space */
 main section {
-    margin: 20px;
+    margin: 0 1% 1% 0;
 }
 
+/* scaling for the first project card which is bigger than the others */
+.first-project {
+    flex: 2 0 100%;
+}
+
+/* scaling for the remaining project cards which are smaller */
 .projects {
     flex: 1 0 40%;
-    max-width: 40%;
-    border: 1px solid black;
+    max-width: 45%;
 }
 
+/* styling for project card headers */
 h3 {
     position: relative;
     border-style: solid;
-    border-width: 1px;
+    border-width: 1%;
     margin-top: 0;
     border-radius: 5px;
     background-color: white;
     text-align: center;
 }
 
-.first-project {
-    border: 2px none black;
-    flex: 2 0 100%;
-}
-
+/* gives an outline to the project cards when they are hovered over */
 section:hover, section:hover h3 {
-    box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px var(--heliotrope);
-
+    box-shadow: inset 0px 0px 8px blueviolet, 0 0 15px blueviolet;
   }
 
-img {
+/* scaling for images in the main cards  so they fill the availible space */
+main img {
     width:100%;
 }
 
+/* flexbox on the footer main element so elements can be rearranged later */
 footer {
     display: flex;
     justify-content: space-between;
-    margin: 2%;
 }
 
+/* styling on the anchor elements in the footer */
 footer a {
     text-decoration: none;
     color: black;
 }
 
+/* styling for the phone number which is not an anchor element and is split into 2 lines */
 footer p {
     text-align: center;
 }
@@ -135,6 +145,7 @@ footer p {
     }
   } */
   
+  /* scaling for small screens */
 @media screen and (max-width: 768px) {
     header, article, main, footer {
         flex-direction: column;
@@ -142,10 +153,5 @@ footer p {
         justify-content: center;
         text-align: center;
     }
-
-    header nav {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
+/* first section changes the flex direction from row to column and centers text, should make it more mobile friendly */
   }

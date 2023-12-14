@@ -67,12 +67,12 @@ article p {
     background-color: aqua;
     width: 100%;
     padding: 1%;
+    border-radius: 5px;
 }
 
 /* flexbox on the main element where the projects are displayed */
 main {
     display: flex;
-    width: 96%;
 }
 
 /* flexbox and scaling on the projects themselves */
@@ -80,23 +80,24 @@ main div {
     display: flex;
     flex-wrap: wrap;
     flex: 1 0 0;
-    /* width: 80%; */
 }
 
 /* padding on the product cards to give them some space */
 main section {
     margin: 0 1% 1% 0;
+    border-radius: 5px;
 }
 
 /* scaling for the first project card which is bigger than the others */
 .first-project {
     flex: 2 0 100%;
+    max-width: 99%;
 }
 
 /* scaling for the remaining project cards which are smaller */
 .projects {
-    flex: 1 0 40%;
-    max-width: 45%;
+    flex: 1 1 50%;
+    max-width: 49%;
 }
 
 /* styling for project card headers */
@@ -105,25 +106,28 @@ h3 {
     border-style: solid;
     border-width: 1%;
     margin-top: 0;
-    border-radius: 5px;
+    border-radius: 25px;
     background-color: white;
     text-align: center;
 }
 
 /* gives an outline to the project cards when they are hovered over */
 section:hover, section:hover h3 {
-    box-shadow: inset 0px 0px 8px blueviolet, 0 0 15px blueviolet;
+    box-shadow: inset 0px 2px 5px blueviolet, 0 0 10px blueviolet;
   }
 
 /* scaling for images in the main cards  so they fill the availible space */
 main img {
     width:100%;
+    border-radius: 5px;
 }
 
 /* flexbox on the footer main element so elements can be rearranged later */
 footer {
     display: flex;
     justify-content: space-between;
+    margin-right: 5%;
+    padding-bottom: 1%;
 }
 
 /* styling on the anchor elements in the footer */
@@ -153,5 +157,17 @@ footer p {
         justify-content: center;
         text-align: center;
     }
+    h2 {
+        margin: 0%;
+    }
+    .projects {
+        max-width: 100%;
+    }
+    footer {
+        margin-right: 0%;
+    }
 /* first section changes the flex direction from row to column and centers text, should make it more mobile friendly */
+/* second section zeroes out the margins for the header elements from desktop */
+/* third section allows for smaller projects to resize to the full width once the screen is small enough */
+/* fourth section zeroes out a margin right from desktop */
   }

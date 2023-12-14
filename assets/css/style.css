@@ -9,44 +9,17 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Set the  */
+/* Set the top level syling for the page */
 body {
     background-color: white;
     font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* header styling results in sticky header that follows the user down the page */
-/* Set up as a flex box to allow for a dynamic change from row to column on smaller screens */
-header {
-    display: flex;
-    flex-wrap: row;
-    inset-block-start: 0;
-    position: sticky;
-    background-color: black;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2;
-    padding: 0 1%;
-    color: white;
-}
-
-/* some styling on my headshot, not too big and border radius results in a circle */
-/* might be better in the about me */
-header img {
-    width: 5%;
-    border-radius: 75%;
-}
-
-/* sets the text color on the links, doesn't seem to apply at higher levels */
-nav a {
-    color: white;
-}
 /* a reused margin around the body elements */
 article, main, footer {
     margin: 1%;
-    padding-top: 2%;
+    padding-top: 3%;
 }
 
 /* some repeated styling on the h2 tags which call out the main sections */
@@ -58,14 +31,42 @@ h2 {
     margin-right: 1%;
 }
 
+/* header styling results in sticky header that follows the user down the page */
+/* Set up as a flex box to allow for a dynamic change from row to column on smaller screens */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    inset-block-start: 0;
+    position: sticky;
+    background-color: black;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    padding: 0 1%;
+    color: white;
+}
+
+/* sets the text color on the links, doesn't seem to apply at higher levels */
+nav a {
+    color: white;
+}
+
 /* made the first body element into a flex box so the direction can change later */
 article {
     display: flex;
 }
 
+/* some styling on my headshot, not too big and border radius results in a circle */
+article img {
+    min-width: 10%;
+    height: 10%;    
+    border-radius: 75%;
+    padding: 0.5%;
+}
+
 article p {
     background-color: aqua;
-    width: 100%;
     padding: 1%;
     border-radius: 5px;
 }
@@ -84,10 +85,21 @@ main div {
 
 /* padding on the product cards to give them some space */
 /* added a transition animation when the cards resize */
+/* transition also applies to box border outline when placed here */
 main section {
     margin: 0 1% 1% 0;
     border-radius: 5px;
-    transition: all 1s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+
+/* styling for project card headers */
+h3 {
+    position: relative;
+    border-style: solid;
+    border-width: 1%;
+    border-radius: 25px;
+    background-color: aqua;
+    text-align: center;
 }
 
 /* scaling for the first project card which is bigger than the others */
@@ -103,19 +115,8 @@ main section {
     max-width: 49%;
 }
 
-/* styling for project card headers */
-h3 {
-    position: relative;
-    border-style: solid;
-    border-width: 1%;
-    margin-top: 0;
-    border-radius: 25px;
-    background-color: white;
-    text-align: center;
-}
-
 /* gives an outline to the project cards when they are hovered over */
-section:hover, section:hover h3 {
+section:hover h3 {
     box-shadow: inset 0px 2px 5px blueviolet, 0 0 10px blueviolet;
   }
 
@@ -153,7 +154,7 @@ footer p {
   } */
   
   /* scaling for small screens */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     header, article, main, footer {
         flex-direction: column;
         align-items: center;

@@ -15,6 +15,7 @@ html {
 body {
     background-color: white;
     font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -28,10 +29,12 @@ header {
     align-items: center;
     z-index: 2;
     padding: 0 1%;
+    /* transition: flex-basis 500ms linear; */
+
 }
 
 h1 {
-    color: var(--white);
+    color: white;
 
 }
 
@@ -50,11 +53,6 @@ h2 {
     text-decoration: underline;
 }
 
-figure {
-    width: 100%;
-    background-color: blueviolet;
-}
-
 article {
     padding-top: 50px;
     display: flex;
@@ -70,12 +68,14 @@ main {
     padding-top: 50px;
     display: flex;
     margin: 20px;
+    width: 96%;
 }
 
 main div {
     display: flex;
     flex-wrap: wrap;
     flex: 1 0 0;
+    /* width: 80%; */
 }
 
 main section {
@@ -92,15 +92,21 @@ h3 {
     position: relative;
     border-style: solid;
     border-width: 1px;
-    margin-top: -20px;
+    margin-top: 0;
     border-radius: 5px;
     background-color: white;
+    text-align: center;
 }
 
 .first-project {
-    border: 2px solid black;
-    flex: 2 0 96%;
+    border: 2px none black;
+    flex: 2 0 100%;
 }
+
+section:hover, section:hover h3 {
+    box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px var(--heliotrope);
+
+  }
 
 img {
     width:100%;
@@ -114,6 +120,11 @@ footer {
 
 footer a {
     text-decoration: none;
+    color: black;
+}
+
+footer p {
+    text-align: center;
 }
 
 /* @media screen and (max-width: 992px) {
